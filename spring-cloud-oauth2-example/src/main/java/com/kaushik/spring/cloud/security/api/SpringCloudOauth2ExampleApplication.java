@@ -1,4 +1,4 @@
-package com.kaushik.spring.okta.sso;
+package com.kaushik.spring.cloud.security.api;
 
 import java.security.Principal;
 
@@ -11,15 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableOAuth2Sso
 @RestController
-public class SpringBootOktaSsoApplication {
-	
-	@GetMapping("/")
-	public String welcome2User(Principal principal) {
-		return "Hi "+principal.getName()+" Welcome to javatechie";
-	}
+public class SpringCloudOauth2ExampleApplication {
 
+	@GetMapping("/")
+	public String message(Principal principal) {
+		return "Hi "+principal.getName()+" Welcome to SpringCloudOauth2ExampleApplication";
+	}
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootOktaSsoApplication.class, args);
+		SpringApplication.run(SpringCloudOauth2ExampleApplication.class, args);
 	}
 
 }
